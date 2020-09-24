@@ -9,15 +9,13 @@ class StudentsController < ApplicationController
   end
 
   def new
-    @students = Student.all
-    # byebug
-
   end
 
   def create
+    session[:form_params] = params.inspect
     # byebug
-    @student = Student.create(first_name: params[:first_name], last_name: params[:last_name])
-    render 'new'
+    # @student = Student.create(first_name: params[:first_name], last_name: params[:last_name])
+    redirect_to new_student_path
     
   end
 

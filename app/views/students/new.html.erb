@@ -5,7 +5,8 @@
 
   <label>Last Name:</label><br>
   <%= text_field_tag name="student[last_name]"  %><br>
-    <%= submit_tag("Submit")%>
+    <%= submit_tag("Submit Student")%>
 <%end%>
 
-<p><%= @students.last%></p>
+<%= session[:form_params] if session[:form_params] %>
+
